@@ -45,7 +45,7 @@ try {
     backgroundChannel.setMethodCallHandler(this)   
 }
 catch(e: Exception) {
-    
+     e.printStackTrace()
 }
 }
 
