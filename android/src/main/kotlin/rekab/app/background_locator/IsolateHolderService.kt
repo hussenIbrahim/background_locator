@@ -61,8 +61,11 @@ class IsolateHolderService : MethodChannel.MethodCallHandler, LocationUpdateList
 
     override fun onCreate() {
         super.onCreate()
-        startLocatorService(this)
-        startForeground(notificationId, getNotification())
+      try{  startLocatorService(this)
+        startForeground(notificationId, getNotification())}catch (e:  Exception) {
+            e.printStackTrace()
+            
+        }
     }
 
     private fun start() {
