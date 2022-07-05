@@ -13,7 +13,8 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 internal fun IsolateHolderService.startLocatorService(context: Context) {
 
-    val serviceStarted = AtomicBoolean(IsolateHolderService.isServiceRunning)
+try {
+     val serviceStarted = AtomicBoolean(IsolateHolderService.isServiceRunning)
     // start synchronized block to prevent multiple service instant
     synchronized(serviceStarted) {
         this.context = context
@@ -41,7 +42,11 @@ internal fun IsolateHolderService.startLocatorService(context: Context) {
     backgroundChannel =
             MethodChannel(IsolateHolderService.backgroundEngine?.dartExecutor?.binaryMessenger!!,
                     Keys.BACKGROUND_CHANNEL_ID)
-    backgroundChannel.setMethodCallHandler(this)
+    backgroundChannel.setMethodCallHandler(this)   
+}
+catch(Exception e) {
+    
+}
 }
 
 fun getLocationRequest(intent: Intent): LocationRequestOptions {
