@@ -44,7 +44,7 @@ try {
                     Keys.BACKGROUND_CHANNEL_ID)
     backgroundChannel.setMethodCallHandler(this)   
 }
-catch(Exception e) {
+catch(e: Exception) {
     
 }
 }
