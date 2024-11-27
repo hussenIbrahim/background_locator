@@ -2,7 +2,7 @@ group 'rekab.app.background_locator'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '2.0.0'
     repositories {
         google()
         jcenter()
@@ -44,9 +44,7 @@ android {namespace 'yukams.app.background_locator_2'
     }
     lintOptions {
         disable 'InvalidPackage'
-    }  kotlinOptions {
-            jvmTarget = "1.8"
-        }
+    } 
 }
 
 dependencies {
