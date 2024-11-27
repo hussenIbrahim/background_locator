@@ -24,8 +24,9 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
-android {
-    compileSdkVersion 30
+android {namespace 'yukams.app.background_locator_2'
+
+    compileSdkVersion 34
     namespace "rekab.app.background_locator"
    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,7 +44,9 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
-    }
+    }  kotlinOptions {
+            jvmTarget = "1.8"
+        }
 }
 
 dependencies {
